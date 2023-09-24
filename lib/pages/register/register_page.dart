@@ -18,7 +18,8 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Register to Find Restaurants")),
+      appBar: AppBar(
+          centerTitle: true, title: const Text("Register to Find Restaurants")),
       body: SingleChildScrollView(
         controller: ScrollController(),
         child: Container(
