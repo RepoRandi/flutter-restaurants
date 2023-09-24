@@ -22,15 +22,14 @@ List<Restaurant> restaurants = [
           imageUrl:
               'https://upload.wikimedia.org/wikipedia/commons/6/6d/Sate_lilit.jpg'),
       Menu(
-          name: 'Bebek Goreng Krispi',
-          price: 75.000,
+          name: 'Ayam Goreng Krispi',
+          price: 60.000,
           imageUrl:
-              'https://media-cdn.tripadvisor.com/media/photo-s/11/13/1b/be/grilled-duck.jpg'),
+              'https://www.astronauts.id/blog/wp-content/uploads/2023/04/Resep-Ayam-Goreng-Serundeng-ala-Rumahan-yang-Nggak-Kalah-Enak-dari-Restoran.jpg'),
       Menu(
-          name: 'Sate Lilit',
-          price: 40.000,
-          imageUrl:
-              'https://upload.wikimedia.org/wikipedia/commons/6/6d/Sate_lilit.jpg'),
+          name: 'Sate Ayam',
+          price: 30.000,
+          imageUrl: 'https://kbu-cdn.com/dk/wp-content/uploads/sate-ayam.jpg'),
     ],
   ),
   Restaurant(
@@ -53,15 +52,15 @@ List<Restaurant> restaurants = [
           imageUrl:
               'https://www.piknikdong.com/wp-content/uploads/2022/09/Resep-Ayam-Pop-Padang-Sederhana.jpg'),
       Menu(
-          name: 'Rendang',
-          price: 30.000,
+          name: 'Kikil',
+          price: 50.000,
           imageUrl:
-              'https://cdn0-production-images-kly.akamaized.net/vIx_lxR1UfFl79d67T7pjvy1tXw=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/1253731/original/213c98558a7233f0f923c91df2b986f9beef-curry-recipe-stew-beef-in-coconut-curry.jpg'),
+              'https://asset.kompas.com/crops/mqYtGN3S_jZncBl0Ug8aj0WNS0E=/0x0:1000x667/750x500/data/photo/2021/03/01/603c964830992.jpg'),
       Menu(
-          name: 'Ayam Pop',
-          price: 28.000,
+          name: 'Udang',
+          price: 35.000,
           imageUrl:
-              'https://www.piknikdong.com/wp-content/uploads/2022/09/Resep-Ayam-Pop-Padang-Sederhana.jpg'),
+              'https://beritapasundan.com/wp-content/uploads/2023/02/fried-prawn-1737593_640.jpg'),
     ],
   ),
   Restaurant(
@@ -84,15 +83,15 @@ List<Restaurant> restaurants = [
           imageUrl:
               'https://img-global.cpcdn.com/recipes/a16d2e480f7795bb/400x400cq70/photo.jpg'),
       Menu(
-          name: 'Sate Maranggi',
-          price: 50.000,
+          name: 'Sate Kambing',
+          price: 70.000,
           imageUrl:
-              'https://2.bp.blogspot.com/-kolISglOKC4/XGOaQTObb8I/AAAAAAAAEAA/h2OCaH3EfosAdLjgGa2gAwXLyg6_6iNtQCLcBGAs/s1600/Sate%2BMaranggi%2Bcibungur.jpg'),
+              'https://kurio-img.kurioapps.com/21/02/23/233c90b4-337b-41b2-8810-73f493a454bb.jpe'),
       Menu(
-          name: 'Empal Gentong',
-          price: 35.000,
+          name: 'Gule',
+          price: 55.000,
           imageUrl:
-              'https://img-global.cpcdn.com/recipes/a16d2e480f7795bb/400x400cq70/photo.jpg'),
+              'https://pict.sindonews.net/dyn/850/pena/news/2023/06/16/185/1128261/resep-gule-kambing-enak-untuk-persiapan-idul-adha-2023-mav.jpg'),
     ],
   ),
   Restaurant(
@@ -106,7 +105,7 @@ List<Restaurant> restaurants = [
     menus: [
       Menu(
           name: 'Soto Ayam',
-          price: 25.000,
+          price: 15.000,
           imageUrl:
               'https://cdns.klimg.com/merdeka.com/i/w/news/2021/09/16/1353423/540x270/rahasia-soto-lamongan-yang-jarang-diketahui-ada-cara-khusus-bikin-koya.jpeg'),
       Menu(
@@ -115,22 +114,22 @@ List<Restaurant> restaurants = [
           imageUrl:
               'https://resepkoki.id/wp-content/uploads/2016/04/Resep-Soto-kuning-bogor.jpg'),
       Menu(
-          name: 'Soto Ayam',
-          price: 25.000,
+          name: 'Soto Babat',
+          price: 20.000,
           imageUrl:
-              'https://cdns.klimg.com/merdeka.com/i/w/news/2021/09/16/1353423/540x270/rahasia-soto-lamongan-yang-jarang-diketahui-ada-cara-khusus-bikin-koya.jpeg'),
+              'https://i0.wp.com/resepkoki.id/wp-content/uploads/2017/07/Resep-Soto-Babat.jpg?fit=1664%2C1664&ssl=1'),
       Menu(
-          name: 'Soto Daging',
-          price: 30.000,
+          name: 'Tahu Campur',
+          price: 35.000,
           imageUrl:
-              'https://resepkoki.id/wp-content/uploads/2016/04/Resep-Soto-kuning-bogor.jpg'),
+              'https://img-global.cpcdn.com/recipes/ae33d45b2241158e/1200x630cq70/photo.jpg'),
     ],
   ),
   Restaurant(
     id: '5',
     name: 'Ayam Goreng Suharti',
     imageUrl:
-        'https://www.infobumi.com/wp-content/uploads/2021/09/20210915_235044-scaled.jpg',
+        'https://i0.wp.com/harga.web.id/wp-content/uploads/ayam-goreng-ny-suharti.jpg?resize=680%2C300&ssl=1',
     address: 'Jl. Laksda Adisucipto, Yogyakarta',
     location: const LatLng(-7.782, 110.365),
     rating: 5.0,
@@ -146,15 +145,15 @@ List<Restaurant> restaurants = [
           imageUrl:
               'https://asset.kompas.com/crops/iKY5hESYh8L5CCu101WTKUhAhQE=/3x0:700x465/750x500/data/photo/2022/04/03/624965d1dc93d.jpg'),
       Menu(
-          name: 'Ayam Goreng',
-          price: 40.000,
+          name: 'Ayam Bakar',
+          price: 50.000,
           imageUrl:
-              'https://asset-2.tstatic.net/jateng/foto/bank/images/ayam-suharti-travel.jpg'),
+              'https://asset-2.tstatic.net/jateng/foto/bank/images/ayam-bakar-tahun-baru.jpg'),
       Menu(
-          name: 'Tahu Telor',
-          price: 20.000,
+          name: 'Tahu Bumbu',
+          price: 12.500,
           imageUrl:
-              'https://asset.kompas.com/crops/iKY5hESYh8L5CCu101WTKUhAhQE=/3x0:700x465/750x500/data/photo/2022/04/03/624965d1dc93d.jpg'),
+              'https://cdns.klimg.com/dream.co.id/resources/news/2022/10/03/210763/1200x600-sedapnya-tahu-telur-berlumur-bumbu-kacang-221003s.jpg'),
     ],
   ),
 ];
