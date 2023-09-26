@@ -64,93 +64,103 @@ class _HomePageState extends State<HomePage>
           )
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 110,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: restaurants.length,
-                itemBuilder: (context, index) {
-                  final restaurant = restaurants[index];
-                  return GestureDetector(
-                    onTap: () {
-                      _showZoomableImage(context, restaurant.imageUrl);
-                    },
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 10.0),
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Container(
-                                width: 90,
-                                height: 90,
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  gradient: LinearGradient(
-                                    colors: [Colors.blue, Colors.purple],
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.bottomRight,
-                                  ),
-                                ),
-                              ),
-                              Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(45),
-                                ),
-                                elevation: 5,
-                                child: CircleAvatar(
-                                  backgroundColor: Colors.grey[200],
-                                  backgroundImage:
-                                      NetworkImage(restaurant.imageUrl),
-                                  radius: 40,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 5.0,
-                        ),
-                        Text('${restaurant.name} ',
-                            style: const TextStyle(
-                                fontSize: 8, fontWeight: FontWeight.bold)),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ),
-            const Divider(),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: SizedBox(
-                height: 200,
-                child: PageView.builder(
-                  controller: _pageController,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 110,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
                   itemCount: restaurants.length,
                   itemBuilder: (context, index) {
                     final restaurant = restaurants[index];
-                    return Image.network(restaurant.imageUrl,
-                        fit: BoxFit.cover);
+                    return GestureDetector(
+                      onTap: () {
+                        _showZoomableImage(context, restaurant.imageUrl);
+                      },
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10.0),
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Container(
+                                  width: 90,
+                                  height: 90,
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    gradient: LinearGradient(
+                                      colors: [Colors.blue, Colors.purple],
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                    ),
+                                  ),
+                                ),
+                                Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(45),
+                                  ),
+                                  elevation: 5,
+                                  child: CircleAvatar(
+                                    backgroundColor: Colors.grey[200],
+                                    backgroundImage:
+                                        NetworkImage(restaurant.imageUrl),
+                                    radius: 40,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 5.0,
+                          ),
+                          Text(
+                            '${restaurant.name} ',
+                            style: const TextStyle(
+                              fontSize: 8,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
                   },
                 ),
               ),
-            ),
-            const SizedBox(height: 16.0),
-            Text(
-              "List Restaurants",
-              style: GoogleFonts.robotoSlab(
-                  fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            const SizedBox(height: 16.0),
-            Expanded(
-              child: ListView.builder(
+              const Divider(),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: SizedBox(
+                  height: 200,
+                  child: PageView.builder(
+                    controller: _pageController,
+                    itemCount: restaurants.length,
+                    itemBuilder: (context, index) {
+                      final restaurant = restaurants[index];
+                      return Image.network(
+                        restaurant.imageUrl,
+                        fit: BoxFit.cover,
+                      );
+                    },
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16.0),
+              Text(
+                "List Restaurants",
+                style: GoogleFonts.robotoSlab(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              const SizedBox(height: 16.0),
+              ListView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
                 itemCount: restaurants.length,
                 itemBuilder: (context, index) {
                   final restaurant = restaurants[index];
@@ -160,8 +170,12 @@ class _HomePageState extends State<HomePage>
                     child: ListTile(
                       leading: ClipRRect(
                         borderRadius: BorderRadius.circular(10),
-                        child: Image.network(restaurant.imageUrl,
-                            width: 50, height: 50, fit: BoxFit.cover),
+                        child: Image.network(
+                          restaurant.imageUrl,
+                          width: 50,
+                          height: 50,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                       title: Text(restaurant.name),
                       subtitle: Text(restaurant.address),
@@ -197,8 +211,8 @@ class _HomePageState extends State<HomePage>
                   );
                 },
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
