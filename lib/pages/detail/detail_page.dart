@@ -38,6 +38,7 @@ class _DetailPageState extends State<DetailPage> {
         children: [
           SizedBox(
             height: 300.0,
+            width: MediaQuery.of(context).size.width,
             child: Image.network(
               widget.restaurant.imageUrl,
               fit: BoxFit.cover,
