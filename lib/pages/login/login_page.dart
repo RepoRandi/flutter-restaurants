@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    checkTermsAcceptance();
+    // checkTermsAcceptance();
   }
 
   void checkTermsAcceptance() async {
@@ -42,8 +42,37 @@ class _LoginPageState extends State<LoginPage> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text("Terms and Agreement"),
-          content:
-              const Text("Ini adalah teks syarat dan ketentuan aplikasi Anda."),
+          content: Container(
+            constraints: const BoxConstraints(maxHeight: 300),
+            child: const SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    "Paragraf 1: Pendahuluan dan Penerimaan Syarat dan Ketentuan",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "Selamat datang di situs web atau layanan kami. Dokumen ini, yang mencakup Syarat dan Ketentuan, adalah perjanjian hukum antara Anda dan [Nama Perusahaan] yang mengatur penggunaan Anda terhadap situs web dan layanan kami. Dengan mengakses atau menggunakan situs web kami, Anda secara tegas menyetujui dan mengikuti semua Syarat dan Ketentuan yang tercantum di sini. Jika Anda tidak setuju dengan Syarat dan Ketentuan ini, mohon untuk tidak mengakses atau menggunakan situs web atau layanan kami.",
+                  ),
+                  Text(
+                    "Paragraf 2: Penggunaan Situs Web dan Layanan",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "Dengan menggunakan situs web kami, Anda setuju untuk mematuhi semua hukum dan peraturan yang berlaku serta bertanggung jawab atas aktivitas Anda. Anda juga menyetujui bahwa Anda akan menggunakan situs web dan layanan kami hanya untuk tujuan yang sah dan tidak akan melakukan tindakan yang dapat merusak, merusak, atau mengganggu integritas situs web kami atau hak-hak pengguna lainnya. Kami berhak untuk menangguhkan atau mengakhiri akses Anda ke situs web dan layanan kami jika kami mencurigai adanya pelanggaran terhadap Syarat dan Ketentuan ini.",
+                  ),
+                  Text(
+                    "Paragraf 3: Privasi dan Data Pribadi",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "Kami menghargai privasi Anda dan berkomitmen untuk melindungi data pribadi Anda sesuai dengan kebijakan privasi kami. Dengan menggunakan situs web kami, Anda menyetujui pengumpulan, penggunaan, dan pengungkapan data pribadi Anda sesuai dengan kebijakan privasi kami. Kami dapat menggunakan informasi pribadi Anda untuk menyediakan layanan, memproses pembayaran, mengirim informasi terkait produk atau promosi, atau untuk tujuan lain yang dijelaskan dalam kebijakan privasi kami. Kami akan menjaga kerahasiaan data pribadi Anda dan tidak akan memberikannya kepada pihak ketiga tanpa izin Anda, kecuali jika diwajibkan oleh hukum.",
+                  ),
+                ],
+              ),
+            ),
+          ),
           actions: <Widget>[
             TextButton(
               child: const Text("Tolak"),
@@ -122,6 +151,7 @@ class _LoginPageState extends State<LoginPage> {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text('Successfully logged in!'),
                     ));
+                    checkTermsAcceptance();
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(builder: (context) => const MainPage()),
