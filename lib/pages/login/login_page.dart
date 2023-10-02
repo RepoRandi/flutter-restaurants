@@ -4,6 +4,8 @@ import 'package:restaurant/models/user/user_model.dart';
 import 'package:restaurant/pages/main/main_page.dart';
 import 'package:restaurant/pages/register/register_page.dart';
 import 'package:restaurant/services/user/user_service.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -13,6 +15,68 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool acceptedTerms = false;
+
+  @override
+  void initState() {
+    super.initState();
+    checkTermsAcceptance();
+  }
+
+  void checkTermsAcceptance() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool hasAcceptedTerms = prefs.getBool('accepted_terms') ?? false;
+
+    setState(() {
+      acceptedTerms = hasAcceptedTerms;
+    });
+
+    if (!hasAcceptedTerms) {
+      showTermsPopup();
+    }
+  }
+
+  void showTermsPopup() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text("Terms and Agreement"),
+          content:
+              const Text("Ini adalah teks syarat dan ketentuan aplikasi Anda."),
+          actions: <Widget>[
+            TextButton(
+              child: const Text("Tolak"),
+              onPressed: () {
+                Navigator.of(context).pop();
+                showToast("Anda harus menerima syarat dan ketentuan.");
+              },
+            ),
+            TextButton(
+              child: const Text("Terima"),
+              onPressed: () async {
+                SharedPreferences prefs = await SharedPreferences.getInstance();
+                prefs.setBool('accepted_terms', true);
+                Navigator.of(context).pop();
+                showToast("Terima kasih telah menerima syarat dan ketentuan.");
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void showToast(String message) {
+    Fluttertoast.showToast(
+      msg: message,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      backgroundColor: Colors.grey,
+      textColor: Colors.white,
+    );
+  }
+
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
   final _userService = UserService();

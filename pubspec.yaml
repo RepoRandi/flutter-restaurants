@@ -32,6 +32,7 @@ dependencies:
     cupertino_icons: ^1.0.2
     flutter:
         sdk: flutter
+    fluttertoast: ^8.2.2
     google_fonts: ^6.0.0
     google_maps_flutter: ^2.5.0
     photo_view: ^0.14.0
